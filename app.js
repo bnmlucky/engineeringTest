@@ -13,21 +13,25 @@ form.addEventListener("submit", function (event) {
         .then(data => showImages(data));
 
     function showImages(data) {
+        const allImagesDiv = document.getElementById("allimages");
+        while (allImagesDiv.firstChild) allImagesDiv.removeChild(allImagesDiv.firstChild);
+
         for (let i = 0; i < 50; i++) {
             const image = document.createElement('img');
             image.setAttribute('src', data.data[i].images.preview_gif.url);
-
-            //document.body.appendChild(image);
-
-            document.getElementById("allimages").appendChild(image);
-
-            //     .setAttribute("src", data.data[i].images.preview_gif.url);
-            // const imageDiv = document.getElementById("allimages").appendChild('img');
-            // console.log(imageDiv);
+            allImagesDiv.appendChild(image);
         }
     }
 
+    const reloadPage = () => {
+        document.getElementById("future-query").addEventListener("click", event => {
+            location.reload(true);
+            //document.getElementById("future-query").focus();
+        })
+    }
 
+    reloadPage();
+    input.focus();
 
 });
 
