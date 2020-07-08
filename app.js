@@ -10,7 +10,8 @@ form.addEventListener("submit", function (event) {
 
     fetch(endpoint)
         .then(response => response.json())
-        .then(data => showImages(data));
+        .then(data => showImages(data))
+        .catch(error => console.log('Looks like there was a problem', error));
 
     function showImages(data) {
         const allImagesDiv = document.getElementById("allimages");
