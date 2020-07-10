@@ -29,16 +29,19 @@ body {
 
   .container {
     max-width: 1000px;
-    margin-top: auto;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .input-field {
     text-align: center;
+    
   }
 
 .allimages {
     width: 100%;
-    float: left;
+    /* float: left; */
     padding: 30px 15px; 
 } 
 
@@ -48,6 +51,12 @@ img {
     margin: 10px;
     border-radius: 5px;
 }
+
+img:hover {
+    opacity: 0.65;
+    border: 5px solid grey;
+  }
+  
 
 img .hide {
     display: none;
@@ -78,15 +87,19 @@ img .show {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .modal-content {
     background-color: #f4f4f4;
-    margin: 50% auto;
+    margin: 10% auto;
     padding: 20px;
-    width: 70%;
+    width: 20%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .closeBtn{
@@ -99,6 +112,11 @@ img .show {
    color: #000;
    text-decoration: none;
    cursor: pointer; 
+}
+
+@keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 .pagination {

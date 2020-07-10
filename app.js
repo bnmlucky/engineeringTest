@@ -10,7 +10,7 @@ const maxItem = 10;
 let index = 1;
 
 var modal = document.getElementById('simpleModal');
-var closeBtn = document.getElementById('closeBtn');
+var closeBtn = document.querySelector('.closeBtn');
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -30,7 +30,7 @@ form.addEventListener("submit", function (event) {
 
         for (let i = 0; i < 50; i++) {
             const image = document.createElement('img');
-            image.setAttribute('src', data.data[i].images.preview_gif.url);
+            image.setAttribute('src', data.data[i].images.downsized_large.url);
             // image.setAttribute("class", "hide"); - only one class can be added at creation of these elements
             // image.setAttribute("class", "show"); - but not 2
 
@@ -42,8 +42,27 @@ form.addEventListener("submit", function (event) {
 
             function openModal() {
                 modal.style.display = 'block';
-                image.setAttribute('src', data.data[i].images.preview_gif.url);
+                image.setAttribute('src', data.data[i].images.downsized_large.url);
                 document.querySelector(".modal-content").appendChild(image);
+            }
+
+            // listen for close click
+            closeBtn.addEventListener("click", closeModal);
+
+            // listen for outside click
+            window.addEventListener('click', clickOutside);
+
+            // function to close modal
+            function closeModal() {
+                modal.style.display = 'none';
+                document.querySelector(".modal-content").removeChild(image);
+                allImagesDiv.prepend(image); //this is a bug - the image gets returned to the collection, but to the first place, not the place where it was taken from
+            }
+
+            function clickOutside(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
             }
 
         }
