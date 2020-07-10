@@ -1,12 +1,16 @@
 const form = document.querySelector("form");
 const input = document.querySelector('input');
 const images = [];
+
 const allImagesDiv = document.getElementById("allimages");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const page = document.querySelector(".page-num");
 const maxItem = 10;
 let index = 1;
+
+var modal = document.getElementById('simpleModal');
+var closeBtn = document.getElementById('closeBtn');
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -31,6 +35,17 @@ form.addEventListener("submit", function (event) {
             // image.setAttribute("class", "show"); - but not 2
 
             allImagesDiv.appendChild(image);
+
+            // My attempt at a modal
+
+            image.addEventListener('click', openModal);
+
+            function openModal() {
+                modal.style.display = 'block';
+                image.setAttribute('src', data.data[i].images.preview_gif.url);
+                document.querySelector(".modal-content").appendChild(image);
+            }
+
         }
     }
 
@@ -82,6 +97,12 @@ form.addEventListener("submit", function (event) {
         showItems();
         check();
     }
+
+    // end of pagination attempt
+
+    // modal functions
+
+
 
     const reloadPage = () => {
         document.getElementById("future-query").addEventListener("click", event => {
