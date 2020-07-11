@@ -4,15 +4,16 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-* {
+
+/* * {
     box-sizing: border-box;
-}
+} */
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 2.5em;
     background-color: #EEE;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +21,7 @@ header {
 h1 {
     color: #422f21;
     text-align: center;
+    font-size: 1.2em;
 }
 
 h2 {
@@ -38,43 +40,26 @@ h2 {
     text-align: center;
 }
 
+input {
+    line-height: 20px;
+}
+
 .allimages {
     width: 100%;
     /* float: left; */
     padding: 30px 15px;
 }
 
-img {
-    height: 200px;
-    width: 200px;
+.allimages img {
+    height: 11em;
+    width: 11em;
     margin: 10px;
     border-radius: 5px;
 }
 
-img:hover {
-    opacity: 0.65;
-    border: 5px solid grey;
+.allimages img:hover {
+    opacity: 0.8;
     cursor: pointer;
-}
-
-img .hide {
-    display: none;
-}
-
-img .show {
-    display: block;
-    animation: show .5s ease;
-}
-
-@keyframes show {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .modal {
@@ -104,12 +89,15 @@ img .show {
 .modal-content img {
     height: auto;
     width: auto;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .closeBtn {
     color: #ccc;
     float: right;
     font-size: 24px;
+    margin-left: 5px;
 }
 
 .closeBtn:hover,
