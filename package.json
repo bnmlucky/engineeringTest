@@ -1,19 +1,22 @@
 {
-  "name": "engineeringtest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "open http://127.0.0.1:5500/index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bnmlucky/engineeringTest.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bnmlucky/engineeringTest/issues"
-  },
-  "homepage": "https://github.com/bnmlucky/engineeringTest#readme"
+    "name": "engineeringtest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "open http://127.0.0.1:5500/index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bnmlucky/engineeringTest.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bnmlucky/engineeringTest/issues"
+    },
+    "homepage": "https://github.com/bnmlucky/engineeringTest#readme",
+    "dependencies": {
+        "http-server": "^0.12.3"
+    }
 }

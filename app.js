@@ -22,7 +22,7 @@ const modalImg = document.getElementById("modalImg")
 
 const pageNumberElement = document.getElementById('pageNumber')
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", function(event) {
     event.preventDefault();
     const query = input.value;
     const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=2pbUP2ptCDDc5PPyxrm26V8RwwK8D93i&q=${query}&limit=${totalElements}&offset=0&rating=g&lang=en`;
@@ -76,7 +76,7 @@ form.addEventListener("submit", function (event) {
 
     function updatePaginationElements() {
         paginationDiv.style.visibility = 'visible';
-        pageNumberElement.textContent = `Page ${currentPage + 1}`
+        pageNumberElement.textContent = `Page ${currentPage + 1} of ${maxPage + 1}`
 
         if (currentPage == maxPage) {
             next.classList.add("disabled");
